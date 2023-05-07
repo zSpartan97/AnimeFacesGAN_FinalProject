@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Anime Faces</title>
+    <script>
+        function generateImage() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/random-image");
+            xhr.onload = function() {
+                document.getElementById("image-container").innerHTML = xhr.responseText;
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>AnimeFacesGenerator</h1>
+    <button onclick="generateImage()">Generate</button>
+    <div id="image-container"></div>
+</body>
+</html>
